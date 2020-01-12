@@ -5,6 +5,7 @@ import java.util.Map;
 
 public final class Notifier {
   private static final Notifier INSTANCE = new Notifier();
+  // aの回答はINSTANCE
 
   private final Object lock = new Object();
   // 利用者ごとに携帯端末を管理
@@ -26,6 +27,7 @@ public final class Notifier {
       if (devices == null) {
         devices = new ArrayList<>();
         userMobileDevices.put(user, devices);
+        // bの回答はuser, devices
       }
       devices.add(device);
     }
@@ -40,6 +42,7 @@ public final class Notifier {
           if (messageList == null) {
             messageList = new ArrayList<>();
             messagesToDeliver.put(device, messageList);
+            // cの回答はdeviceとmessageList
           }
           messageList.add(message);
           devices.add(device);
