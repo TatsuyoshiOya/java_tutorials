@@ -21,7 +21,7 @@ public class Piece {
   }
 
   public boolean tryStepForward() {
-    // 回答cの答え
+    // 回答cの答え location.x + direction.dx, location.y + direction.dy
     Location nextLocation = new Location(location.x + direction.dx, location.y + direction.dy);
     if (maze.isBlank(nextLocation)) {
       location = nextLocation;
